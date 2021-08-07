@@ -1,11 +1,7 @@
 <template>
- <h1>Frontend Mentor | Job Listings</h1>
+  <main class="font-spartan">
+    <h1>Frontend Mentor | Job Listings</h1>
+  </main>
 </template>
 
-<script setup>
-
-</script>
-
-<style>
-
-</style>
+<script></script>
