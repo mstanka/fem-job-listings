@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card {
+    @apply shadow mx-auto my-10 max-w-xs md:max-w-6xl text-primary p-6 bg-light rounded relative;
+  }
+  .btn {
+    @apply rounded-xl px-2 py-1 m-1 text-xs;
+  }
+  .btn-primary {
+    @apply text-neutralLight bg-primary;
+  }
+  .btn-secondary {
+    @apply text-neutralLight bg-neutralDarker;
+  }
+  .btn-label {
+    @apply rounded-md px-2 py-1 m-1 text-primary bg-neutralLight text-sm;
+  }
+  
+}

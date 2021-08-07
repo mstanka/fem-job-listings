@@ -1,3 +1,5 @@
+const { withDirectives } = require("vue");
+
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -8,6 +10,7 @@ module.exports = {
       neutralLighter: 'hsl(180, 52%, 96%)',
       neutralDark: 'hsl(180, 8%, 52%)',
       neutralDarker: 'hsl(180, 14%, 20%)',
+      light: 'hsl(0, 0%, 100%)',
     },
     fontFamily: {
       spartan: ['Spartan', 'sans-serif'],
@@ -24,5 +27,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-// @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
