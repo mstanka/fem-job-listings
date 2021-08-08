@@ -17,7 +17,9 @@
       />
       <div>
         <div class="flex items-center mt-2 md:mt-0">
-          <h3 class="text-sm text-primary font-bold mr-2 md:mr-0">{{ company }}</h3>
+          <h3 class="text-sm text-primary font-bold mr-2 md:mr-0">
+            {{ company }}
+          </h3>
           <button class="btn btn-primary" type="button" v-if="isNew">
             NEW!
           </button>
@@ -35,7 +37,8 @@
             items-center
             border-b border-neutralDark
             md:border-none
-            pb-2 md:pb-0
+            pb-2
+            md:pb-0
             text-sm
           "
         >
@@ -49,17 +52,28 @@
     </div>
 
     <div class="pt-2 md:pt-0 flex flex-wrap items-center">
-      <button class="btn-label" type="button">{{ role }}</button>
-      <button class="btn-label" type="button">{{ level }}</button>
+      <button class="btn-label" type="button" @click="addNewFilter">
+        {{ role }}
+      </button>
+      <button class="btn-label" type="button" @click="addNewFilter">
+        {{ level }}
+      </button>
       <button
         v-for="language in languages"
         :key="language"
         class="btn-label"
         type="button"
+        @click="addNewFilter"
       >
         {{ language }}
       </button>
-      <button v-for="tool in tools" :key="tool" class="btn-label" type="button">
+      <button
+        v-for="tool in tools"
+        :key="tool"
+        class="btn-label"
+        type="button"
+        @click="addNewFilter"
+      >
         {{ tool }}
       </button>
     </div>
@@ -86,6 +100,11 @@ export default {
   computed: {
     isFeaturedStyle() {
       return this.featured ? 'border-l-4 border-primary' : null;
+    },
+  },
+  methods: {
+    setFilter(event) {
+      this.$store.dispatch('addNewFilter', event.value);
     },
   },
 };
