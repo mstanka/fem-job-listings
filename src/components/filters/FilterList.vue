@@ -1,5 +1,8 @@
 <template>
-  <div class="card w-full -mt-16 flex-row" v-if="isFilterActive">
+  <div
+    class="card w-full -mt-16 flex-row justify-between"
+    v-if="isFilterActive"
+  >
     <div class="flex flex-wrap">
       <button
         class="btn-filter"
@@ -10,16 +13,41 @@
         :value="filter"
       >
         {{ filter }}
-        <div class="p-1 ml-1 bg-primary rounded-r-md">
+        <div
+          class="
+            p-1
+            ml-1
+            bg-primary
+            rounded-r-md
+            hover:bg-neutralDarker
+            transition
+            duration-500
+            ease-in
+          "
+        >
           <img
             src="../../assets/images/icon-remove.svg"
             alt="delete icon"
-            class="w-4 inline text-neutralLight bg-primary"
+            class="w-4 inline text-neutralLight hover:bg-neutralDarker"
           />
         </div>
       </button>
     </div>
-    <button class="btn" type="button" @click="clearFilters">Clear</button>
+    <button
+      class="
+        btn
+        font-bold
+        text-neutralDark
+        hover:text-primary hover:border-b
+        transition
+        duration-500
+        ease-in
+      "
+      type="button"
+      @click="clearFilters"
+    >
+      Clear
+    </button>
   </div>
 </template>
 

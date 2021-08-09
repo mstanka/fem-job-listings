@@ -27,7 +27,18 @@
             FEATURED
           </button>
         </div>
-        <h2 class="text-neutralDarker font-bold py-2">
+        <h2
+          class="
+            text-neutralDarker
+            font-bold
+            py-2
+            hover:text-primary
+            cursor-pointer
+            transition
+            duration-500
+            ease-in
+          "
+        >
           {{ position }}
         </h2>
         <div
@@ -52,20 +63,10 @@
     </div>
 
     <div class="pt-2 md:pt-0 flex flex-wrap items-center">
-      <button
-        class="btn-label"
-        type="button"
-        @click="addFilter"
-        :value="role"
-      >
+      <button class="btn-label" type="button" @click="addFilter" :value="role">
         {{ role }}
       </button>
-      <button
-        class="btn-label"
-        type="button"
-        @click="addFilter"
-        :value="level"
-      >
+      <button class="btn-label" type="button" @click="addFilter" :value="level">
         {{ level }}
       </button>
       <button
