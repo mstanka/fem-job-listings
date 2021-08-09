@@ -7,4 +7,7 @@ export default {
   clearFilters(context) {
     context.commit('clearFilters');
   },
+  removeFilter(context, payload) {
+    context.commit('removeFilter', payload);
+  },
 };

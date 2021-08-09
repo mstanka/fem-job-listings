@@ -12,4 +12,9 @@ export default {
   clearFilters(state) {
     state.allFilters = [];
   },
+  removeFilter(state, payload) {
+    const allCurrentFilters = state.allFilters;
+    const index = allCurrentFilters.indexOf(payload);
+    allCurrentFilters.splice(index, 1);
+  },
 };

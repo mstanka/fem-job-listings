@@ -6,6 +6,8 @@
         type="button"
         v-for="filter in currentFilters"
         :key="filter"
+        @click="removeItem"
+        :value="filter"
       >
         {{ filter }}
         <div class="p-1 ml-1 bg-primary rounded-r-md">
@@ -23,6 +25,9 @@
 
 <script>
 export default {
+  pros: {
+    filters: Array,
+  },
   computed: {
     currentFilters() {
       return this.$store.getters.currentFilters;
@@ -34,6 +39,9 @@ export default {
   methods: {
     clearFilters() {
       this.$store.dispatch('clearFilters');
+    },
+    removeItem(event) {
+      this.$store.dispatch('removeFilter', event.target.value);
     },
   },
 };
