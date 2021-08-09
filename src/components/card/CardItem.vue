@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="isFeaturedStyle">
+  <li class="card" :class="isFeaturedStyle">
     <div class="md:flex md:flex-row md:items-center md:justify-between">
       <img
         :src="logo"
@@ -90,7 +90,7 @@
         {{ tool }}
       </button>
     </div>
-  </div>
+  </li>
 </template>
 
 <script>
