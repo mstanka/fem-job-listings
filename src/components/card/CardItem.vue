@@ -55,7 +55,7 @@
       <button
         class="btn-label"
         type="button"
-        @click="toggleFilter"
+        @click="addFilter"
         :value="role"
       >
         {{ role }}
@@ -63,7 +63,7 @@
       <button
         class="btn-label"
         type="button"
-        @click="toggleFilter"
+        @click="addFilter"
         :value="level"
       >
         {{ level }}
@@ -73,7 +73,7 @@
         :key="language"
         class="btn-label"
         type="button"
-        @click="toggleFilter"
+        @click="addFilter"
         :value="language"
       >
         {{ language }}
@@ -83,7 +83,7 @@
         :key="tool"
         class="btn-label"
         type="button"
-        @click="toggleFilter"
+        @click="addFilter"
         :value="tool"
       >
         {{ tool }}
@@ -115,7 +115,7 @@ export default {
     },
   },
   methods: {
-    toggleFilter(event) {
+    addFilter(event) {
       this.$store.dispatch('setFilter', event.target.value);
     },
   },

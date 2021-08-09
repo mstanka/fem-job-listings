@@ -4,15 +4,13 @@ export default {
 
     if (!allCurrentFilters.includes(payload)) {
       allCurrentFilters.push(payload);
-    } else {
-      const index = allCurrentFilters.indexOf(payload);
-      allCurrentFilters.splice(index, 1);
     }
   },
   clearFilters(state) {
     state.allFilters = [];
   },
   removeFilter(state, payload) {
+    console.log(payload);
     const allCurrentFilters = state.allFilters;
     const index = allCurrentFilters.indexOf(payload);
     allCurrentFilters.splice(index, 1);
