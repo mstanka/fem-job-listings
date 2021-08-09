@@ -4,4 +4,7 @@ export default {
     console.log(payload);
     context.commit('setFilter', newFilter);
   },
+  clearFilters(context) {
+    context.commit('clearFilters');
+  },
 };

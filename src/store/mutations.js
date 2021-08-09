@@ -9,4 +9,7 @@ export default {
       allCurrentFilters.splice(index, 1);
     }
   },
+  clearFilters(state) {
+    state.allFilters = [];
+  },
 };

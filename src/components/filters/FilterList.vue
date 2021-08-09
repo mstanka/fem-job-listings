@@ -6,12 +6,11 @@
         type="button"
         v-for="filter in currentFilters"
         :key="filter"
-        
       >
         {{ filter }}
       </button>
     </div>
-    <div class="text-sm">Clear</div>
+    <button class="btn" type="button" @click="clearFilters">Clear</button>
   </div>
 </template>
 
@@ -20,6 +19,11 @@ export default {
   computed: {
     currentFilters() {
       return this.$store.getters.currentFilters;
+    },
+  },
+  methods: {
+    clearFilters() {
+      this.$store.dispatch('clearFilters');
     },
   },
 };
