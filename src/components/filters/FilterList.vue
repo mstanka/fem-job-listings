@@ -1,13 +1,20 @@
 <template>
-  <div class="card w-full -mt-16">
-    <div>
+  <div class="card w-full -mt-16 flex-row">
+    <div class="flex flex-wrap">
       <button
-        class="btn-label"
+        class="btn-filter"
         type="button"
         v-for="filter in currentFilters"
         :key="filter"
       >
         {{ filter }}
+        <div class="p-1 ml-1 bg-primary rounded-r-md">
+          <img
+            src="../../assets/images/icon-remove.svg"
+            alt="delete icon"
+            class="w-4 inline text-neutralLight bg-primary"
+          />
+        </div>
       </button>
     </div>
     <button class="btn" type="button" @click="clearFilters">Clear</button>
