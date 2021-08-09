@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     currentJobs() {
-      return this.$store.getters.filteredJobs;
+      return this.$store.getters.jobsUpdated;
     },
   },
 };

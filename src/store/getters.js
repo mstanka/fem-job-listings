@@ -2,8 +2,14 @@ export default {
   jobs(state) {
     return state.jobs;
   },
-  filteredJobs(state) {
-    const filters = 'Frontend';
-    return state.jobs.filter(job => job.role === filters)
+  jobsUpdated(_, getters) {
+    const jobs = getters.jobs;
+    return jobs.map((job) => ({
+      ...job,
+      filters: [job.position, job.role, ...job.languages, ...job.tools],
+    }));
+  },
+  currentFilters(state) {
+    return state.allFilters;
   },
 };

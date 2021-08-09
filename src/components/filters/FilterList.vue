@@ -1,7 +1,15 @@
 <template>
   <div class="card w-full -mt-16">
     <div>
-      <button class="btn-label" type="button">filters</button>
+      <button
+        class="btn-label"
+        type="button"
+        v-for="filter in currentFilters"
+        :key="filter"
+        
+      >
+        {{ filter }}
+      </button>
     </div>
     <div class="text-sm">Clear</div>
   </div>
@@ -10,8 +18,8 @@
 <script>
 export default {
   computed: {
-    getFilters() {
-      return this.$store.getters.getFilters;
+    currentFilters() {
+      return this.$store.getters.currentFilters;
     },
   },
 };

@@ -52,10 +52,20 @@
     </div>
 
     <div class="pt-2 md:pt-0 flex flex-wrap items-center">
-      <button class="btn-label" type="button" @click="addNewFilter">
+      <button
+        class="btn-label"
+        type="button"
+        @click="toggleFilter"
+        :value="role"
+      >
         {{ role }}
       </button>
-      <button class="btn-label" type="button" @click="addNewFilter">
+      <button
+        class="btn-label"
+        type="button"
+        @click="toggleFilter"
+        :value="level"
+      >
         {{ level }}
       </button>
       <button
@@ -63,7 +73,8 @@
         :key="language"
         class="btn-label"
         type="button"
-        @click="addNewFilter"
+        @click="toggleFilter"
+        :value="language"
       >
         {{ language }}
       </button>
@@ -72,7 +83,8 @@
         :key="tool"
         class="btn-label"
         type="button"
-        @click="addNewFilter"
+        @click="toggleFilter"
+        :value="tool"
       >
         {{ tool }}
       </button>
@@ -103,8 +115,8 @@ export default {
     },
   },
   methods: {
-    setFilter(event) {
-      this.$store.dispatch('addNewFilter', event.value);
+    toggleFilter(event) {
+      this.$store.dispatch('setFilter', event.target.value);
     },
   },
 };
