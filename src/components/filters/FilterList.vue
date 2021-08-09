@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-full -mt-16 flex-row">
+  <div class="card w-full -mt-16 flex-row" v-if="isFilterActive">
     <div class="flex flex-wrap">
       <button
         class="btn-filter"
@@ -26,6 +26,9 @@ export default {
   computed: {
     currentFilters() {
       return this.$store.getters.currentFilters;
+    },
+    isFilterActive() {
+      return this.currentFilters.length !== 0;
     },
   },
   methods: {

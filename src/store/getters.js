@@ -6,7 +6,7 @@ export default {
     const jobs = getters.jobs;
     return jobs.map((job) => ({
       ...job,
-      filters: [job.position, job.level, ...job.languages, ...job.tools],
+      filters: [job.role, job.level, ...job.languages, ...job.tools],
     }));
   },
   currentFilters(state) {
